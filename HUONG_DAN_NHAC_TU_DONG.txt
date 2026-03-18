@@ -1,0 +1,91 @@
+✅ HOÀN THÀNH! NHẠC NỀN TỰ ĐỘNG ĐÃ SẴN SÀNG!
+==========================================
+
+🎵 File nhạc của anh:
+---------------------
+📁 Hôm Nay Tôi Buồn L.R ft LVK (A An Bau)_HLS/playlist.m3u8
+
+✅ ĐÃ CẤU HÌNH:
+----------------
+✔️ Sử dụng file HLS (playlist.m3u8) của anh
+✔️ Tích hợp thư viện HLS.js để phát trên mọi trình duyệt
+✔️ Auto-play: Tự động phát khi vào trang
+✔️ Loop: Lặp lại liên tục ♾️
+✔️ Volume: Âm lượng mặc định 50%
+✔️ Delay 1 giây sau khi load trang
+
+
+🚀 CÁCH SỬ DỤNG:
+-----------------
+1. Double-click file: demo.bat
+2. Đợi trang web load xong
+3. Sau 1 giây, nhạc sẽ TỰ ĐỘNG PHÁT! 🎧
+4. Nhạc sẽ lặp lại liên tục
+
+
+🎛️ ĐIỀU CHỈNH:
+---------------
+- Click icon nhạc (góc trên phải) để xem player
+- Kéo thanh volume để điều chỉnh âm lượng
+- Chọn nhạc khác trong danh sách nếu muốn
+- Nhạc của anh sẽ ở nhóm "🎵 Nhạc local"
+
+
+⚙️ CÔNG NGHỆ:
+--------------
+- HLS.js: Thư viện streaming HLS
+- Support: Chrome, Firefox, Edge, Safari
+- Format: .m3u8 (HTTP Live Streaming)
+- Auto-retry khi lỗi
+
+
+💡 LƯU Ý:
+----------
+1. Trình duyệt có thể block autoplay lần đầu
+   → Click vào trang 1 lần rồi refresh
+
+2. Nếu không nghe được:
+   → Mở Console (F12) xem lỗi
+   → Kiểm tra volume không phải 0
+   → Thử trình duyệt khác
+
+3. File HLS cần cấu trúc đúng:
+   ✅ playlist.m3u8 (manifest)
+   ✅ Các file .ts (segments)
+   ✅ Tất cả phải cùng thư mục
+
+
+🔍 KIỂM TRA:
+-------------
+Mở Console (F12) và tìm:
+- "🎵 Auto-playing background music..." → Code OK
+- "HLS Error" → Lỗi file HLS
+- "Autoplay blocked" → Click vào trang rồi refresh
+
+
+📂 VỊ TRÍ FILE:
+---------------
+d:\padoro\public\music\Hôm Nay Tôi Buồn L.R ft LVK (A An Bau)_HLS\
+├── playlist.m3u8  ← File manifest
+└── *.ts          ← Các file audio segments
+
+
+✨ TÍNH NĂNG ĐẶC BIỆT:
+----------------------
+- Adaptive bitrate: Tự điều chỉnh theo mạng
+- Buffer smooth: Không bị giật lag
+- Error recovery: Tự retry khi lỗi
+- Cross-browser: Chạy mọi trình duyệt
+
+
+🎯 TEST:
+--------
+1. Vào demo.bat
+2. Đợi 1 giây
+3. Nghe nhạc "Hôm Nay Tôi Buồn" tự động phát! 🎵
+
+
+==========================================
+Chúc anh nghe nhạc vui vẻ! 🎧✨
+
+P/S: Nhạc sẽ lặp lại mãi mãi cho đến khi anh tắt hoặc đổi bài! 🔁

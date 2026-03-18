@@ -1,0 +1,58 @@
+═══════════════════════════════════════════
+    PADORO - THÔNG TIN TÀI KHOẢN DEMO
+═══════════════════════════════════════════
+
+📌 TÀI KHOẢN DEMO ĐÃ TẠO SẴN:
+
+   Username:  demo
+   Email:     demo@padoro.com
+   Mật khẩu:  demo123
+
+═══════════════════════════════════════════
+
+🎁 TÀI KHOẢN NÀY CÓ SẴN:
+
+   ⭐ 500 EXP (để mua thú cưng)
+   🔥 Streak 5 ngày liên tục  
+   📊 Lịch sử học tập mẫu
+   📅 Lịch học được AI tạo sẵn
+   🐶 3 thú cưng đã mở khóa
+
+═══════════════════════════════════════════
+
+🚀 CÁCH VÀO:
+
+   CÁCH 1 (Nhanh nhất):
+   → Double-click file: demo.bat
+   → Click nút "Tạo tài khoản & Vào ngay"
+
+   CÁCH 2 (Thủ công):
+   → Double-click file: start.bat
+   → Đăng nhập với thông tin trên
+
+═══════════════════════════════════════════
+
+💡 LƯU Ý:
+
+   • Dữ liệu lưu trong LocalStorage trình duyệt
+   • Không xóa dữ liệu trình duyệt nếu muốn giữ
+   • Tài khoản demo có thể tạo lại bất cứ lúc nào
+
+═══════════════════════════════════════════
+
+🤖 SỬ DỤNG AI (TÙY CHỌN):
+
+   Muốn dùng AI tạo lịch học:
+   
+   1. Vào Cài đặt trong app
+   2. Lấy API key miễn phí tại:
+      https://makersuite.google.com/app/apikey
+   3. Dán vào ô API Key và Lưu
+   4. Vào tab "Lịch học" → "AI tạo lịch"
+
+═══════════════════════════════════════════
+
+📖 Xem HUONG_DAN.md để biết thêm chi tiết
+📚 Xem README.md để biết đầy đủ tính năng
+
+═══════════════════════════════════════════

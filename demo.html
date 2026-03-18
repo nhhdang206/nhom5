@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo Account - Padoro</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #0f1419 0%, #1a1f2e 100%);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            text-align: center;
+            padding: 2rem;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .info {
+            background: rgba(35, 41, 54, 0.95);
+            padding: 2rem;
+            border-radius: 16px;
+            max-width: 500px;
+            margin: 2rem auto;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        .credential {
+            background: rgba(102, 126, 234, 0.1);
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+            border: 1px solid rgba(102, 126, 234, 0.3);
+        }
+
+        .credential strong {
+            color: #667eea;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            text-decoration: none;
+            border-radius: 10px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin-top: 1rem;
+            transition: transform 0.2s;
+            cursor: pointer;
+            border: none;
+            font-family: inherit;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(102, 126, 234, 0.4);
+        }
+
+        .loader {
+            display: none;
+            width: 40px;
+            height: 40px;
+            border: 4px solid rgba(255, 255, 255, 0.1);
+            border-top-color: #667eea;
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+            margin: 2rem auto;
+        }
+
+        @keyframes spin {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        .success {
+            color: #10b981;
+            font-size: 1.2rem;
+            margin: 1rem 0;
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>🎯 Tài Khoản Demo - Padoro</h1>
+
+        <div class="info">
+            <h2>Thông tin đăng nhập:</h2>
+
+            <div class="credential">
+                <strong>Username:</strong> demo
+            </div>
+
+            <div class="credential">
+                <strong>Email:</strong> demo@padoro.com
+            </div>
+
+            <div class="credential">
+                <strong>Mật khẩu:</strong> demo123
+            </div>
+
+            <p style="color: #9ca3af; margin-top: 1.5rem;">
+                Tài khoản này đã được tạo sẵn với:<br>
+                ✨ 500 EXP để mua thú cưng<br>
+                🔥 Streak 5 ngày liên tục<br>
+                📚 Một số lịch sử học tập mẫu<br>
+                🤖 Lịch học được AI tạo sẵn
+            </p>
+
+            <div class="loader" id="loader"></div>
+            <div class="success" id="success">✅ Đã tạo tài khoản và đăng nhập!</div>
+
+            <button class="btn" id="createBtn" onclick="createAndLogin()">
+                🚀 Tạo tài khoản & Vào ngay
+            </button>
+        </div>
+
+        <p style="color: #6b7280; margin-top: 2rem;">
+            Hoặc bạn có thể <a href="index.html" style="color: #667eea;">đăng nhập thủ công</a> với thông tin trên
+        </p>
+    </div>
+
+    <script src="public/js/storage.js"></script>
+    <script>
+        function createAndLogin() {
+            const btn = document.getElementById('createBtn');
+            const loader = document.getElementById('loader');
+            const success = document.getElementById('success');
+
+            btn.style.display = 'none';
+            loader.style.display = 'block';
+
+            // Check if demo account already exists
+            const existingUser = Storage.findUser('demo');
+
+            if (!existingUser) {
+                // Create demo account with sample data
+                const demoUser = {
+                    id: Date.now().toString(),
+                    username: 'demo',
+                    email: 'demo@padoro.com',
+                    password: 'demo123',
+                    createdAt: new Date(Date.now() - 7 * 24 * 60 * 60 * 1000).toISOString(), // 7 days ago
+                    exp: 500,
+                    streak: 5,
+                    lastActive: new Date().toISOString(),
+                    settings: {
+                        focusTime: 25,
+                        shortBreak: 5,
+                        longBreak: 15,
+                        apiKey: ''
+                    },
+                    stats: {
+                        totalSessions: 15,
+                        totalMinutes: 375
+                    },
+                    pets: ['🐱', '🐶', '🐰'], // Has bought some pets
+                    activePet: '🐶',
+                    schedules: [
+                        {
+                            id: '1',
+                            name: 'Lịch học tuần này',
+                            createdAt: new Date().toISOString(),
+                            data: {
+                                monday: ['8:00-10:00 Toán - Đại số', '10:15-12:00 Lý - Cơ học', '14:00-16:00 Hóa - Hữu cơ'],
+                                tuesday: ['8:00-10:00 Văn - Nghị luận', '10:15-12:00 Anh - Grammar', '14:00-16:00 Sử - Lịch sử Việt Nam'],
+                                wednesday: ['8:00-10:00 Toán - Hình học', '10:15-12:00 Lý - Điện học', '14:00-16:00 Hóa - Vô cơ'],
+                                thursday: ['8:00-10:00 Văn - Văn học', '10:15-12:00 Anh - Reading', '14:00-16:00 Địa - Địa lý tự nhiên'],
+                                friday: ['8:00-10:00 Toán - Ôn tập', '10:15-12:00 Lý - Ôn tập', '14:00-16:00 Hóa - Ôn tập'],
+                                saturday: ['9:00-11:00 Ôn tập tổng hợp', '14:00-16:00 Làm bài tập'],
+                                sunday: ['Nghỉ ngơi - Đọc sách'],
+                                advice: 'Hãy giữ nhịp độ học đều đặn, nghỉ ngơi đầy đủ để não bộ hấp thụ kiến thức tốt nhất!'
+                            }
+                        }
+                    ],
+                    history: [
+                        { date: getDateString(-5), minutes: 75, exp: 15 },
+                        { date: getDateString(-4), minutes: 100, exp: 20 },
+                        { date: getDateString(-3), minutes: 50, exp: 10 },
+                        { date: getDateString(-2), minutes: 80, exp: 16 },
+                        { date: getDateString(-1), minutes: 70, exp: 14 }
+                    ],
+                    feedbacks: []
+                };
+
+                // Save to storage
+                const users = Storage.getUsers();
+                users.push(demoUser);
+                Storage.saveUsers(users);
+            }
+
+            // Set as current user
+            Storage.setCurrentUser('demo');
+
+            // Show success
+            setTimeout(() => {
+                loader.style.display = 'none';
+                success.style.display = 'block';
+
+                // Redirect to app
+                setTimeout(() => {
+                    window.location.href = 'app.html';
+                }, 1500);
+            }, 1000);
+        }
+
+        function getDateString(daysOffset) {
+            const date = new Date();
+            date.setDate(date.getDate() + daysOffset);
+            return date.toISOString().split('T')[0];
+        }
+
+        // Auto create and login if URL has ?auto parameter
+        if (window.location.search.includes('auto')) {
+            window.onload = () => {
+                setTimeout(() => createAndLogin(), 500);
+            };
+        }
+    </script>
+</body>
+
+</html>

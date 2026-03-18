@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng ký - Padoro</title>
+    <meta name="description" content="Đăng ký tài khoản Padoro để bắt đầu học tập thông minh với AI">
+    <link rel="stylesheet" href="public/css/main.css">
+    <link rel="stylesheet" href="public/css/auth.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Particle Background Effect -->
+    <div id="particles-bg"></div>
+
+    <!-- Register Container -->
+    <div class="auth-container">
+        <div class="auth-card">
+            <div class="auth-header">
+                <div class="logo-container">
+                    <svg class="logo-icon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="50" cy="50" r="45" fill="none" stroke="url(#gradient1)" stroke-width="3" />
+                        <circle cx="50" cy="50" r="35" fill="url(#gradient2)" />
+                        <path d="M50 20 L50 50 L70 50" stroke="white" stroke-width="3" stroke-linecap="round" />
+                        <defs>
+                            <linearGradient id="gradient1" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#667eea;stop-opacity:1" />
+                                <stop offset="100%" style="stop-color:#764ba2;stop-opacity:1" />
+                            </linearGradient>
+                            <linearGradient id="gradient2" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#667eea;stop-opacity:0.3" />
+                                <stop offset="100%" style="stop-color:#764ba2;stop-opacity:0.3" />
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                    <h1 class="logo-text">Đăng ký</h1>
+                </div>
+                <p class="auth-subtitle">Tạo tài khoản mới</p>
+            </div>
+
+            <form id="registerForm" class="auth-form">
+                <div class="form-group">
+                    <label for="registerUsername">Tên đăng nhập</label>
+                    <input type="text" id="registerUsername" name="username" required minlength="3"
+                        autocomplete="username">
+                    <span class="input-highlight"></span>
+                    <small class="form-hint">Ít nhất 3 ký tự</small>
+                </div>
+
+                <div class="form-group">
+                    <label for="registerEmail">Email</label>
+                    <input type="email" id="registerEmail" name="email" required autocomplete="email">
+                    <span class="input-highlight"></span>
+                    <small class="form-hint">Dùng để khôi phục mật khẩu</small>
+                </div>
+
+                <div class="form-group">
+                    <label for="registerPassword">Mật khẩu</label>
+                    <input type="password" id="registerPassword" name="password" required minlength="6"
+                        autocomplete="new-password">
+                    <span class="input-highlight"></span>
+                    <small class="form-hint">Ít nhất 6 ký tự</small>
+                </div>
+
+                <div class="form-group">
+                    <label for="registerConfirmPassword">Xác nhận mật khẩu</label>
+                    <input type="password" id="registerConfirmPassword" name="confirmPassword" required
+                        autocomplete="new-password">
+                    <span class="input-highlight"></span>
+                </div>
+
+                <div class="form-options">
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="agreeTerms" required>
+                        <span class="checkbox-custom"></span>
+                        <span class="checkbox-text">Tôi đồng ý với điều khoản sử dụng</span>
+                    </label>
+                </div>
+
+                <div id="registerError" class="error-message"></div>
+                <div id="registerSuccess" class="success-message"></div>
+
+                <button type="submit" class="btn btn-primary">
+                    <span class="btn-text">Đăng ký</span>
+                    <span class="btn-loader"></span>
+                </button>
+            </form>
+
+            <div class="auth-footer">
+                <p>Đã có tài khoản? <a href="index.html" class="link-text">Đăng nhập</a></p>
+            </div>
+        </div>
+    </div>
+
+    <script src="public/js/particles.js"></script>
+    <script src="public/js/storage.js"></script>
+    <script src="public/js/auth.js"></script>
+</body>
+
+</html>
